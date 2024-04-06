@@ -3,10 +3,13 @@ import { Table } from "antd";
 import { EllipsisOutlined } from "@ant-design/icons";
 
 export default function RecentTable({ data, dataTableColumns }) {
+  const totalColumnsWidth = dataTableColumns.reduce((total, column) => total + (column.width || 200), 0);
+  const availableWidth = window.innerWidth - 50; // Adjust this value as needed to leave space for other UI elements
+
   const columns = dataTableColumns.map(column => ({
     ...column,
     ellipsis: true,
-    width: 250, // Set a fixed width for each column (adjust the value as needed)
+    width: column.width ? column.width : (column.width = Math.floor(availableWidth / totalColumnsWidth * 200)), // Assuming initial width of 200px for columns without explicit width
   }));
 
   return (

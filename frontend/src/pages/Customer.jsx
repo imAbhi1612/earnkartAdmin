@@ -96,6 +96,7 @@ function Customer() {
       title: "Updated At",
       dataIndex: "updatedAt",
       key: "updatedAt",
+      render: (updatedAt) => new Date(updatedAt).toLocaleDateString('en-IN'),
     },
     {
       title: "Actions",

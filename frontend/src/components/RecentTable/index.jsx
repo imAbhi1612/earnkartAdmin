@@ -6,6 +6,7 @@ export default function RecentTable({ data, dataTableColumns }) {
   const columns = dataTableColumns.map(column => ({
     ...column,
     ellipsis: true,
+    width: 250, // Set a fixed width for each column (adjust the value as needed)
   }));
 
   return (

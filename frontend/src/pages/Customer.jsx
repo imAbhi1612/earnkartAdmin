@@ -93,6 +93,11 @@ function Customer() {
       key: "email",
     },
     {
+      title: "Updated At",
+      dataIndex: "updatedAt",
+      key: "updatedAt",
+    },
+    {
       title: "Actions",
       dataIndex: "",
       key: "actions",
